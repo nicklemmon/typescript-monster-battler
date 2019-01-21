@@ -10,7 +10,8 @@
   "scripts": {
     "clean": "rm -rf ./dist",
     "build": "npm run clean && npx tsc",
-    "start": "npm run build && node --experimental-modules  ./dist/index.mjs",
+    "prepare": "sh toMJS.bash",
+    "start": "npm run build && npm run prepare && node --experimental-modules ./dist/index.mjs",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",

@@ -1,6 +1,8 @@
 {
   "compilerOptions": {
-    "outFile": "./dist/index.mjs",
+    "module": "es6",
+    "outDir": "./dist/",
+    "pretty": true,
     "removeComments": true
   },
   "include": [
