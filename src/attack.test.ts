@@ -8,7 +8,7 @@ const Cyclops = {
   vitality: 10
 }
 
-test( 'Expect attack(Cyclops) to return a value between 2 and 7', () => {
+test( 'Expect attack( Cyclops ) to return a value between 2 and 7', () => {
   const value = attack( Cyclops );
 
   expect( value ).toBeGreaterThanOrEqual( 2 );
