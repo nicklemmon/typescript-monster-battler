@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "outFile": "./dist/index.js",
+    "removeComments": true
+  },
+  "include": [
+    "src/**/*"
+  ],
+  "exclude": [
+    "node_modules",
+    "**/*.test.js"
+  ]
+}
