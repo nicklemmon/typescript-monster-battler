@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "outFile": "./dist/index.js",
+    "outFile": "./dist/index.mjs",
     "removeComments": true
   },
   "include": [
