@@ -8,6 +8,7 @@
     "@types/jest": "^23.3.13",
     "jest": "^23.6.0",
     "ts-jest": "^23.10.5",
+    "typedoc": "^0.14.2",
     "typescript": "^3.2.4"
   },
   "scripts": {
@@ -15,7 +16,8 @@
     "build": "npm run clean && npx tsc",
     "prepare": "sh toMJS.bash",
     "start": "npm run build && npm run prepare && node --experimental-modules ./dist/index.mjs",
-    "test": "npx jest"
+    "test": "npx jest",
+    "docs": "npx typedoc --out docs/ src/ --exclude src/**/*test.ts"
   },
   "author": "",
   "license": "ISC"
