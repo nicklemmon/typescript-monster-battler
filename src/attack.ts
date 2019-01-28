@@ -1,13 +1,13 @@
-import Entity from './Entity';
+import Monster from './Monster';
 import rollDice from './rollDice';
 
 /**
- * @param entity Accepts an Entity, i.e., a character. Determines attack value based on the entity's stats and simulated dice rolling.
+ * @param monster Accepts a Monster, i.e., a character. Determines attack value based on the entity's stats and simulated dice rolling.
  */
-export default function attack( entity: Entity ) {
-  const attackValue = rollDice( entity.dexterity, entity.strength );
+export default function attack( monster: Monster ) {
+  const attackValue = rollDice( monster.dexterity, monster.strength );
 
-  console.log( `${entity.name} attacks for ${attackValue} damage!`)
+  console.log( `${monster.name} attacks for ${attackValue} damage!`)
 
   return attackValue;
 }

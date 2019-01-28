@@ -1,10 +1,10 @@
-import Entity from './Entity';
+import Monster from './Monster';
 import rollDice from './rollDice';
 
-export default function defend( entity: Entity ) {
-  const defendValue = rollDice( entity.dexterity, entity.toughness );
+export default function defend( monster: Monster ) {
+  const defendValue = rollDice( monster.dexterity, monster.toughness );
 
-  console.log( `${entity.name} defends for ${defendValue} damage.` )
+  console.log( `${monster.name} defends for ${defendValue} damage.` )
 
   return defendValue;
 }
