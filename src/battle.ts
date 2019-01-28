@@ -1,3 +1,4 @@
+import color from '../node_modules/ansi-colors/index.js';
 import attack from './attack';
 import defend from './defend';
 import getHP from './getHP';
@@ -15,7 +16,7 @@ export default function battle( instigator: Monster, victim: Monster ) {
 
     victimHP -= damage;
 
-    console.log( `➖ ${victim.name} takes ${damage} damage.` );
+    console.log( color.gray( `➖ ${victim.name} takes ${damage} damage.` ) );
   }
 
   function victimAttacks() {
@@ -25,7 +26,7 @@ export default function battle( instigator: Monster, victim: Monster ) {
 
     instigatorHP -= damage;
 
-    console.log( `➖ ${instigator.name} takes ${damage} damage.` );
+    console.log( color.gray( `➖ ${instigator.name} takes ${damage} damage.` ) );
   }
 
   while( victimHP > 0 ) {
@@ -33,7 +34,7 @@ export default function battle( instigator: Monster, victim: Monster ) {
     victimAttacks();
   }
 
-  if ( victimHP <= 0 ) console.log( `💀 ${victim.name} was defeated.` );
+  if ( victimHP <= 0 ) console.log( color.red( `💀 ${color.bold( victim.name )} was defeated.` ) );
 
-  if ( instigatorHP <= 0 ) console.log( `💀 ${instigator.name} was defeated.` );
+  if ( instigatorHP <= 0 ) console.log( color.red( `💀 ${color.bold( instigator.name )} was defeated.` ) );
 }

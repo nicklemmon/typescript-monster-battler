@@ -1,3 +1,4 @@
+import color from '../node_modules/ansi-colors/index.js';
 import Monster from './Monster';
 import rollDice from './rollDice';
 
@@ -7,7 +8,7 @@ import rollDice from './rollDice';
 export default function attack( monster: Monster ) {
   const attackValue = rollDice( monster.dexterity, monster.strength );
 
-  console.log( `🗡️ ${monster.name} attacks for ${attackValue} damage!`)
+  console.log( `🗡️ ${color.bold( monster.name )} attacks for ${color.red.bold.dim( attackValue + ' damage.' )}` );
 
   return attackValue;
 }
