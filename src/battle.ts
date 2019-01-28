@@ -9,6 +9,15 @@ export default function battle( instigator: Monster, victim: Monster ) {
   let instigatorHP = getHP( instigator );
   let victimHP = getHP( victim );
 
+  console.log( '' );
+  console.log( '⚔️ ⚔️ ⚔️ ⚔️ ⚔️ ⚔️ ⚔️ ⚔️ ⚔️ ⚔️️️️️ ⚔️ ⚔️ ⚔️ ⚔️ ⚔️ ⚔️ ⚔️' );
+  console.log( '' );
+  console.log( color.bold( 'THE BATTLE BEGINS!' ) );
+  console.log( color.dim( `It\'s the ${color.bold( instigator.name )} attacking the ${color.bold( victim.name )}.` ) );
+  console.log( '' );
+  console.log( '⚔️ ⚔️ ⚔️ ⚔️ ⚔️ ⚔️ ⚔️ ⚔️ ⚔️ ⚔️️️️️ ⚔️ ⚔️ ⚔️ ⚔️ ⚔️ ⚔️ ⚔️' );
+  console.log( '' );
+
   function instigatorAttacks() {
     const attackValue = attack( instigator );
     const defendValue = defend( victim );
