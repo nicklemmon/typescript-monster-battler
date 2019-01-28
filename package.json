@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "dependencies": {},
+  "dependencies": {
+    "colors": "^1.3.3"
+  },
   "devDependencies": {
     "@types/jest": "^23.3.13",
     "jest": "^23.6.0",
@@ -15,7 +17,7 @@
     "clean": "rm -rf ./dist",
     "build": "npm run clean && npx tsc",
     "prepare": "sh toMJS.bash",
-    "start": "npm run build && npm run prepare && node --experimental-modules ./dist/index.mjs",
+    "start": "npm run build && npm run prepare && node --experimental-modules ./dist/index.mjs --no-warnings",
     "test": "npx jest",
     "docs": "npx typedoc --out docs/ src/ --exclude src/**/*test.ts"
   },

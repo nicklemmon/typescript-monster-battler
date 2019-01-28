@@ -14,12 +14,8 @@ export default function battle( instigator: Monster, victim: Monster ) {
 
     victimHP -= attack( instigator );
 
-    console.log( `${victim.name} takes ${damage} damage.` );
-
-    if ( victimHP === 0 ) {
-      console.log( `${victim.name} was defeated.` );
-
-      return;
-    }
+    console.log( `➖ ${victim.name} takes ${damage} damage.` );
   }
+
+  if ( victimHP <= 0 ) console.log( `💀 ${victim.name} was defeated.` );
 }
