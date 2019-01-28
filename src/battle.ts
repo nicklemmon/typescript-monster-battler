@@ -1,21 +1,39 @@
 import attack from './attack';
 import defend from './defend';
 import getHP from './getHP';
+import getDamage from './getDamage';
 import Monster from './Monster';
 
 export default function battle( instigator: Monster, victim: Monster ) {
   let instigatorHP = getHP( instigator );
   let victimHP = getHP( victim );
 
-  while( victimHP > 0 ) {
+  function instigatorAttacks() {
     const attackValue = attack( instigator );
     const defendValue = defend( victim );
-    const damage = ( ( attackValue - defendValue ) > 0 ) ? attackValue - defendValue : 0;
+    const damage = getDamage( attackValue, defendValue );
 
-    victimHP -= attack( instigator );
+    victimHP -= damage;
 
     console.log( `➖ ${victim.name} takes ${damage} damage.` );
   }
 
+  function victimAttacks() {
+    const attackValue = attack( victim );
+    const defendValue = defend( instigator );
+    const damage = getDamage( attackValue, defendValue );
+
+    instigatorHP -= damage;
+
+    console.log( `➖ ${instigator.name} takes ${damage} damage.` );
+  }
+
+  while( victimHP > 0 ) {
+    instigatorAttacks();
+    victimAttacks();
+  }
+
   if ( victimHP <= 0 ) console.log( `💀 ${victim.name} was defeated.` );
+
+  if ( instigatorHP <= 0 ) console.log( `💀 ${instigator.name} was defeated.` );
 }
