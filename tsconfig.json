@@ -3,7 +3,11 @@
     "module": "es6",
     "outDir": "./dist/",
     "pretty": true,
-    "removeComments": true
+    "removeComments": true,
+    "baseUrl": ".",
+    "paths": {
+      "ansi-colors": [ "node_modules/ansi-colors/index.js" ] // This mapping is relative to "baseUrl"
+    }
   },
   "include": [
     "src/**/*"
@@ -11,5 +15,6 @@
   "exclude": [
     "node_modules",
     "**/*.test.js"
-  ]
+  ],
+  "esModuleInterop": true
 }

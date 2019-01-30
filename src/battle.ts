@@ -1,4 +1,4 @@
-import color from '../node_modules/ansi-colors/index.js';
+import color from 'ansi-colors';
 import attack from './attack';
 import defend from './defend';
 import getHP from './getHP';

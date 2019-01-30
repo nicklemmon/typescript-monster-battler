@@ -13,5 +13,9 @@ module.exports = {
     "jsx",
     "json",
     "node"
-  ]
+  ],
+  "moduleNameMapper": {
+    "^color": "<rootDir>/node_modules/ansi-colors/index.js",
+    "^ansi-colors": "<rootDir>/node_modules/ansi-colors/index.js"
+  }
 }
