@@ -5,9 +5,11 @@
     "pretty": true,
     "removeComments": true,
     "baseUrl": ".",
+    "moduleResolution": "node",
     "paths": {
       "ansi-colors": [ "node_modules/ansi-colors/index.js" ] // This mapping is relative to "baseUrl"
-    }
+    },
+    "lib": [ "ES2017", "DOM" ],
   },
   "include": [
     "src/**/*"
